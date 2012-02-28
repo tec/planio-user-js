@@ -45,8 +45,9 @@ if(location.host.substr(location.host.length-8)=='.plan.io'){
     }
   }
   
-  // add nicer stars margins on projects page
+  // improvements for project page
   if(location.pathname == "/projects") {
+    // add nicer stars margins on projects page
     projects = document.querySelectorAll('.projects .project')
     for ( var project_i = 0; project_i < projects.length; project_i++){
       var project = projects[project_i];
@@ -56,6 +57,24 @@ if(location.host.substr(location.host.length-8)=='.plan.io'){
     for ( var project_i = 0; project_i < projects.length; project_i++){
       project = projects[project_i];
       project.style.marginLeft = "0px";
+    }
+
+    // auto open projects
+    function fireEvent(element,event) {
+      if (document.createEvent) {
+        // dispatch for firefox + others
+        var evt = document.createEvent("HTMLEvents");
+        evt.initEvent(event, true, true ); // event type,bubbling,cancelable
+        return !element.dispatchEvent(evt);
+      } else {
+        // dispatch for IE
+        var evt = document.createEventObject();
+        return element.fireEvent('on'+event,evt)
+      }
+    }
+    var els = document.getElementsByClassName("more"); 
+    for (var i = 0; i < els.length; i++) { 
+      fireEvent(els[i],'click');
     }
   }
 }
