@@ -2,6 +2,10 @@
 // @name           planio
 // @namespace      planio
 // @include        https://*.plan.io/*
+// @updateURL      https://raw.github.com/tec/planio-user-js/master/planio.user.js
+// @downloadURL    https://raw.github.com/tec/planio-user-js/master/planio.user.js
+// @version        1.0
+// @author         https://github.com/tec
 // ==/UserScript==
 
 if(location.host.substr(location.host.length-8)=='.plan.io'){
