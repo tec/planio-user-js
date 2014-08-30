@@ -52,15 +52,20 @@ if(location.host.substr(location.host.length-8)=='.plan.io'){
   // improvements for project page
   if(location.pathname == "/projects") {
     // add nicer stars margins on projects page
-    projects = document.querySelectorAll('.projects .project')
+    var projects = document.querySelectorAll('.projects .project');
     for ( var project_i = 0; project_i < projects.length; project_i++){
       var project = projects[project_i];
       project.style.marginLeft = "18px";
     }
-    projects = document.querySelectorAll('.projects .project.my-project')
-    for ( var project_i = 0; project_i < projects.length; project_i++){
-      project = projects[project_i];
-      project.style.marginLeft = "0px";
+    var myProjects = document.querySelectorAll('.projects .project.my-project');
+    for ( var myProject_i = 0; myProject_i < myProjects.length; myProject_i++){
+      var myProject = myProjects[myProject_i];
+      myProject.style.marginLeft = "0px";
+    }
+    var collapsedProjects = document.querySelectorAll('.projects .more.collapsed');
+    for ( var collapsedProject_i = 0; collapsedProject_i < collapsedProjects.length; collapsedProject_i++){
+      var collapsedProject = collapsedProjects[collapsedProject_i];
+      collapsedProject.style.marginLeft = "14px";
     }
 
     // auto open projects
